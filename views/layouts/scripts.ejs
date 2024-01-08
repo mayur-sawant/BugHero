@@ -1,0 +1,77 @@
+<!-- Bootstrap core JavaScript-->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="/vendor/chart.js/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.16.1/ckeditor.js" integrity="sha512-2nFxKVmFuBhAR45DBnAANBjtxzf7z0m6wRU7NOquxibA6efrQpUtdjFT4wzqewqTI3/cCNbBzJNUtu1NxjFiKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<% if (active.search("comments") > 0) { %>
+    <script>
+        var config = {
+            extraPlugins: 'codesnippet',
+            codeSnippet_theme: 'monokai_sublime',
+            height: 356
+
+        };
+
+        CKEDITOR.replace('comment', config)
+    </script>
+<% } %>
+
+<%if (active.search("issues") > 0) { %>
+    <% if (active.search("details") > 0) { %>
+        <script>
+            var config = {
+                extraPlugins: 'codesnippet',
+                codeSnippet_theme: 'monokai_sublime',
+                height: 356
+
+            };
+
+            CKEDITOR.replace('comment', config)
+        </script>
+    <% } else { %>
+        <script>
+            var config = {
+                extraPlugins: 'codesnippet',
+                codeSnippet_theme: 'monokai_sublime',
+                height: 356
+
+            };
+
+            CKEDITOR.replace('description', config)
+        </script>
+    <% } %>
+<% } else { %>
+    <script>
+        var config = {
+            extraPlugins: 'codesnippet',
+            codeSnippet_theme: 'monokai_sublime',
+            height: 356
+
+        };
+
+        CKEDITOR.replace('description', config)
+    </script>
+<% } %>
+
+<!-- Page level plugins -->
+<script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="/js/demo/datatables-demo.js"></script>
+
+<!-- code highlight -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
